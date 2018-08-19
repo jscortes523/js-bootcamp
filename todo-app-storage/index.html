@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>TODO APP</h1>
+        <div id="summary">
+            <h2>Summary</h2>
+            <p id="summary-detail"></p>
+        </div>
+        <form id="todo-form">
+            <input type="text" placeholder="New ToDo Text" name="todoName">
+            <button>Add To Do</button>
+        </form>
+        <input id="filter-todo" type="text" placeholder="Filtering...">
+        <label>
+            <input id="hide-complete" type="checkbox"> Hide Complete
+        </label>
+        <select id="filter-selection">
+            <option value="byName">by Name</option>
+            <option value="byCreated">by recently created</option>
+            <option value="byEdited">by last edited</option>
+        </select>
+        <div id="todos"></div>
+        <!--<P>IT IS THE FIRST TAG</P>
+        <P>IT IS THE SECOND TAG</P>
+        <P>IT IS THE THIRD TAG</P>
+        <P>IT IS THE fOURTH TAG</P>
+        <P>IT IS THE FIFTH STTAG</P>
+         <table>
+            <tr>
+                <th>TO-DO TASK</th>
+                <th>IS COMPLETE</th>
+            </tr>
+           
+            
+        </table> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+        <button id="add-todo">Add a To Do</button>
+        <script src="uuidv4.js"></script>
+        <script src="todo-functions.js"></script>
+        <script src="todo-app.js"></script>
+    </body>
+</html>
