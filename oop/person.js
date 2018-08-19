@@ -37,7 +37,7 @@ Person.prototype.setProperty = function(property,value){
     })
 }
 
-const playerOne = new Person('Juan','Cortes',26,23,'Spain')
+const playerOne = new  Person('Juan','Cortes',26,23,'Spain')
 
 const playerTwo = new Person('Andrea','Lopez',26,10,'France')
 
