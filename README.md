@@ -1,5 +1,5 @@
 # js-bootcamp
-Javascript fundamentals execirse and source code
+Javascript fundamentals exercise and source code
 You will find some basic code with fundamentals javascript concept
 It will be usefull if you are starting in javascript word
 
