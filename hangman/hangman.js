@@ -2,7 +2,7 @@ const Hangman = function(word,opportunities){
     this.word = word.toLowerCase().split('')
     this.guessedLetters = []
     this.opportunities = opportunities
-    this.status = 'Playing...'
+    this.status = 'Playing'
 }
 
 
@@ -15,13 +15,14 @@ Hangman.prototype.addGuess = function(letter) {
     const isUnique = !this.guessedLetters.includes(letter)
     const isNotMatch = !this.word.includes(letter)
     const isPositive = this.opportunities > 0
+    const isPlaying = this.status === 'Playing'
     //Add unique guess to list of guesses
-    if( isUnique && isPositive) {
+    if( isUnique && isPositive && isPlaying) {
         this.guessedLetters.push(letter)
     }
 
     //Verify that the letter is unique and it does not a match to make a decrement
-    if(isUnique && isNotMatch && isPositive ){
+    if(isUnique && isNotMatch && isPositive && isPlaying){
         this.opportunities--
     }
      
@@ -51,11 +52,11 @@ const finished = this.word.every(letter => {
 })
 
 if(this.opportunities === 0){
-    this.status = 'Failed :('
+    this.status = 'Failed'
 }else if(finished){
-    this.status = 'Finished !!!!'
+    this.status = 'Finished'
 }else{
-    this.status = 'Playing...'
+    this.status = 'Playing'
 }
 
 /*     let status = ''
@@ -79,12 +80,20 @@ if(this.opportunities === 0){
  */ 
 }
 
-/* const gameOne = new Hangman('butterfly',10)
+Hangman.prototype.getMessage = function( ){
 
-const gameTwo = new Hangman('Sport',6)
+    let message;
+    console.log(this.status)
+    if(this.status === 'Playing'){
+        message = `Guesses Left: ${this.opportunities}`
+    }else if(this.status == 'Failed'){
+        message = `Sorry you Fail :(, and Guess what, the word was '${this.word.join('')}'`
+    }else{
+        message = `Hey you, amazing, you WIN!!!`
+    }
+    return message
 
- */
-
+}
 
 
 

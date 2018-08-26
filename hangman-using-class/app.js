@@ -12,12 +12,14 @@
 //HANGMAN FUNCTION
 
 //Define a new game global variable
-const game = new Hangman('rabbit',6)
+const game = new Hangman('white rabbit',6)
+
+console.log(game) 
 
 const displayPuzzle = (game) => {
 
-    document.querySelector('#puzzle-guesses').textContent = game.getPuzzle()
-    document.querySelector('#puzzle-message').textContent = game.getMessage()
+    document.querySelector('#puzzle-guesses').textContent = game.puzzle
+    document.querySelector('#puzzle-message').textContent = game.message
     document.querySelector('#puzzle-status').textContent = `Game: ${game.status}`
 
 }
