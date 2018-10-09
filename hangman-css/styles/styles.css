@@ -1,0 +1,16 @@
+/*define style by element level*/
+p {
+    color: burlywood;
+    /* background: darkblue; */
+}
+
+/*Define style by id level*/
+#puzzle-guesses {
+    color: brown;
+}
+
+/*Define style class*/
+.button-custom {
+    color: darkblue;
+    background: sienna;
+}
