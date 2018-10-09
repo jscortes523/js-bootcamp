@@ -28,3 +28,37 @@ promiseExample.then( (data) => {
 }, (error) => {
     console.log(error)
 } )
+
+
+//Chainin Promise
+const chaininPromise = (num) => new Promise((resolve,reject) =>{
+
+    setTimeout(() => {
+
+        typeof num === 'number' ? resolve(num*2) : reject('Argument must be a number')
+
+    }, 500);
+})
+
+//Chainin calling
+chaininPromise(3).then( (num) =>  {
+    chaininPromise(num).then((num) => {
+        console.log(`Multiplication = ${num}`)
+    }, (err) => {
+        console.log(err)
+    })
+},(err)=> {
+    console.log(err)
+})
+
+
+//Chainin return
+chaininPromise(4).then((num) => {
+    return chaininPromise(num)
+}).then( (num) => {
+    return chaininPromise(num)
+} ).then((num) => {
+    console.log(num)
+}).catch((err) => {
+    console.log(`Error: ${err}`)
+})
