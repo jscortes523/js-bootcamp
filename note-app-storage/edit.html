@@ -2,10 +2,21 @@
 <html>
     <head>
         <link href="./styles/styles.css" rel="stylesheet">
-        TODO EDIT PAGE
+        
     </head>
     <body>
-        <h3><a href="/index.html">Back to Home</a></h3>
+        <div class="header">
+                <div class="container">
+                    <h1 class="header__title"> NOTES APP</h1>
+                    <H2 class="header__subtitle">EDIT</H2>
+                </div>
+        </div>
+        <div class="actions">
+            <div class="actions__container actions__container--spaced">
+                <a href="/index.html">Back to Home</a>   
+                <span id="last-edited"></span>
+            </div>
+        </div>
         <div>
             <input id="note-text" placeholder="Put a new note" type="text">
             <button id="note-remove">Remove Todo</button>
